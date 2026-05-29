@@ -1,0 +1,20 @@
+{
+  "name": "spatial-kit",
+  "version": "1.0.0",
+  "description": "A TypeScript toolkit for building interactive 2D scenes. It provides spatial indexing, bounding box utilities, hit-testing helpers, and canvas rendering primitives for use cases like canvas editors, diagrams, map-like UIs, and custom interactive layers.",
+  "homepage": "https://github.com/tveechkina/spatial-kit#readme",
+  "bugs": {
+    "url": "https://github.com/tveechkina/spatial-kit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tveechkina/spatial-kit.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
