@@ -1,4 +1,4 @@
-import { BoundingBox } from "../types/geometry.types";
+import { BoundingBox } from "../../types";
 
 export function isAbove(a: BoundingBox, b: BoundingBox): boolean {
     return a.y.max < b.y.min;

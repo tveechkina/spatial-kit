@@ -1,4 +1,4 @@
-import { BoundingBox, AxisRange, Point } from "../types/geometry.types";
+import { BoundingBox, AxisRange, Point } from "../../types";
 
 export function getBoundingBoxCenter(bbox: BoundingBox): Point {
     return {
@@ -8,5 +8,5 @@ export function getBoundingBoxCenter(bbox: BoundingBox): Point {
 }
 
 function getAxisRangeCenter(axis: AxisRange): number {
-    return axis.max - ((axis.max - axis.min) / 2);
+    return (axis.max + axis.min) / 2;
 }

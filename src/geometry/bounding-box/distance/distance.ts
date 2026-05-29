@@ -1,4 +1,4 @@
-import { BoundingBox, AxisRange, Point } from "../types";
+import { BoundingBox, AxisRange, Point } from "../../types";
 
 export function getPointToBoundingBoxDistance(point: Point, bbox: BoundingBox): number {
     const distanceX = getDistanceToAxisRange(bbox.x, point.x);
