@@ -15,6 +15,12 @@ export type SpatialObjectUpdate<Data = unknown> = Partial<
   Omit<SpatialObject<Data>, 'id'>
 >;
 
+export interface QueryOptions {
+  layers?: SpatialLayer[];
+  limit?: number;
+  sortByPriority?: boolean;
+}
+
 export interface SpatialIndexLike<Data = unknown> {
   /**
    * The number of objects currently stored in the index.
@@ -64,7 +70,7 @@ export interface SpatialIndexLike<Data = unknown> {
    *
    * Touching boundaries are considered an intersection.
    */
-  search(bbox: BoundingBox): SpatialObject<Data>[];
+  search(bbox: BoundingBox, query?: QueryOptions): SpatialObject<Data>[];
 
   /**
    * Returns all objects within the given radius of a point.
@@ -72,14 +78,18 @@ export interface SpatialIndexLike<Data = unknown> {
    * The distance is measured from the point to the nearest position
    * on each object's bounding box.
    */
-  findInRadius(point: Point, radius: number): SpatialObject<Data>[];
+  findInRadius(
+    point: Point,
+    radius: number,
+    query?: QueryOptions
+  ): SpatialObject<Data>[];
 
   /**
    * Returns all objects whose bounding boxes contain the given point.
    *
    * Bounding-box boundaries are included.
    */
-  findAtPoint(point: Point): SpatialObject<Data>[];
+  findAtPoint(point: Point, query?: QueryOptions): SpatialObject<Data>[];
 
   /**
    * Returns the highest-priority object whose bounding box contains
@@ -89,5 +99,9 @@ export interface SpatialIndexLike<Data = unknown> {
    *
    * @returns The matching object, or `undefined` if no object was found.
    */
-  hitTest(point: Point): SpatialObject<Data> | undefined;
+  hitTest(
+    point: Point,
+    redius?: number,
+    query?: QueryOptions
+  ): SpatialObject<Data> | undefined;
 }
